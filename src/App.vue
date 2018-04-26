@@ -20,13 +20,23 @@
     <h4>三元运算：{{ ok ? 'yes' : 'no'}}</h4>
     <h4>直接进行js的二次操作：（逆转字符串）{{ message.split('').reverse().join('') }}</h4>
     <div v-bind:id="'list'+id" v-bind:title="'id = list'+id">给元素绑定不同的id</div>
+    <hr><br>
+    <h1>给元素绑定事件</h1>
+    <h3><button v-on:click="alert_tip">点我</button></h3>
+    <hr><br>
+    <h1>用户输入，双向绑定</h1>
+    <input type="text" name="" id="" v-model="input_val"> + 
+    <input type="text" v-model="input_val1"> = 
+    <input type="text" readonly :value="parseInt(input_val) + parseInt(input_val1)">
+    <hr><br>
+    
   </div>
 </template>
 
 <script>
 export default {
   name: 'content_box',
-  data () {
+  data () {       //数据（变量（常量））
     return {
       title : '这是依照菜鸟教程来做的',
       home_url : "www.zhangheteng.com",
@@ -35,12 +45,22 @@ export default {
       class1 : false,
       ok : true ,
       message : 'RUNOOB',
-      id : 1
+      id : 1,
+      input_val : 12,
+      input_val1 : 5
     }
   },
-  methods :{
+  methods :{          //方法
     function_name : function(){
       return "这是我的blog地址："+this.blog_url;
+    },
+    alert_tip :function(){
+      let h = confirm("点我你高兴吗？");
+      if(h == true){
+        alert("是的，我很高兴");
+      }else{
+        alert("不，我不高兴");
+      }
     }
   }
 }
