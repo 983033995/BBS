@@ -4,6 +4,13 @@
     <h3>这是我的这人网站{{ home_url }}</h3>
     <h3>{{function_name()}}</h3>
     <h3 v-html="v_html"></h3>
+    <h1>v-bind指令</h1>
+    <label for="r1">修改颜色</label>
+    <input type="checkbox" v-model="class1" id="r1">
+    <br><br>
+    <div v-bind:class = "{'class1' : class1}">
+        directiva v-bind:class
+    </div>
   </div>
 </template>
 
@@ -15,7 +22,8 @@ export default {
       title : '这是依照菜鸟教程来做的',
       home_url : "www.zhangheteng.com",
       blog_url : "blog.zhangheteng.com",
-      v_html : "这是通过v-html模板输出的"
+      v_html : "这是通过v-html模板输出的",
+      class1 : false
     }
   },
   methods :{
@@ -52,5 +60,9 @@ li {
 
 a {
   color: #42b983;
+}
+.class1{
+  background: #444;
+  color: #eee;
 }
 </style>
