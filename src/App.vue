@@ -11,6 +11,15 @@
     <div v-bind:class = "{'class1' : class1}">
         directiva v-bind:class
     </div>
+    <hr>
+    <h1>表达式</h1>
+    <h4>直接进行数字的加减运算：4+4= {{4+4}}</h4>
+    <h4>直接进行数字的加减运算：9-4= {{9-4}}</h4>
+    <h4>直接进行数字的加减运算：4*4= {{4*4}}</h4>
+    <h4>直接进行数字的加减运算：16/4= {{16/4}}</h4>
+    <h4>三元运算：{{ ok ? 'yes' : 'no'}}</h4>
+    <h4>直接进行js的二次操作：（逆转字符串）{{ message.split('').reverse().join('') }}</h4>
+    <div v-bind:id="'list'+id" v-bind:title="'id = list'+id">给元素绑定不同的id</div>
   </div>
 </template>
 
@@ -23,7 +32,10 @@ export default {
       home_url : "www.zhangheteng.com",
       blog_url : "blog.zhangheteng.com",
       v_html : "这是通过v-html模板输出的",
-      class1 : false
+      class1 : false,
+      ok : true ,
+      message : 'RUNOOB',
+      id : 1
     }
   },
   methods :{
